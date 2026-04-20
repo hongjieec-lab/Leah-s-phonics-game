@@ -513,61 +513,68 @@ var WORD_BANK = {
   // World 1: Spring - short a + i
   phase2: {
     levels: [
+      // Level 1 — short /a/: -at family
       [
-        BASIC('cat','cat','sun','tree'),
-        BASIC('bat','bat','sun','tree'),
-        BASIC('hat','hat','sun','tree'),
-        BASIC('mat','mat','sun','tree'),
-        BASIC('rat','rat','sun','tree'),
-        BASIC('van','van','sun','tree')
+        BASIC('cat','cat','bat','hat'),
+        BASIC('bat','bat','cat','rat'),
+        BASIC('hat','hat','mat','cat'),
+        BASIC('mat','mat','hat','rat'),
+        BASIC('rat','rat','cat','mat'),
+        BASIC('van','van','can','man')
       ],
+      // Level 2 — short /a/: -an / -ag / -am family
       [
-        BASIC('can','can','sun','tree'),
-        BASIC('man','man','sun','tree'),
-        BASIC('pan','pan','sun','tree'),
-        BASIC('bag','bag','sun','tree'),
-        BASIC('tag','tag','sun','tree'),
-        BASIC('jam','jam','sun','tree')
+        BASIC('can','can','van','pan'),
+        BASIC('man','man','can','pan'),
+        BASIC('pan','pan','can','man'),
+        BASIC('bag','bag','tag','jam'),
+        BASIC('tag','tag','bag','map'),
+        BASIC('jam','jam','bag','tag')
       ],
+      // Level 3 — short /a/: -ap / -am / misc
       [
-        BASIC('cap','cap','sun','tree'),
-        BASIC('map','map','sun','tree'),
-        BASIC('tap','tap','sun','tree'),
-        BASIC('ant','ant','sun','tree'),
-        BASIC('ram','ram','sun','tree'),
-        BASIC('yak','yak','sun','tree')
+        BASIC('cap','cap','map','tap'),
+        BASIC('map','map','cap','tap'),
+        BASIC('tap','tap','cap','map'),
+        BASIC('ant','ant','ram','yak'),
+        BASIC('ram','ram','ant','yak'),
+        BASIC('yak','yak','ant','ram')
       ],
+      // Level 4 — short /i/: -ig / -it family
       [
-        BASIC('pig','pig','sun','tree'),
-        BASIC('big','big','sun','tree'),
-        BASIC('dig','dig','sun','tree'),
-        BASIC('sit','sit','sun','tree'),
-        BASIC('bit','bit','sun','tree'),
-        BASIC('hit','hit','sun','tree')
+        BASIC('pig','pig','big','dig'),
+        BASIC('big','big','pig','dig'),
+        BASIC('dig','dig','pig','big'),
+        BASIC('sit','sit','bit','hit'),
+        BASIC('bit','bit','sit','hit'),
+        BASIC('hit','hit','sit','bit')
       ],
+      // Level 5 — short /i/: -in / -ip family
       [
-        BASIC('pin','pin','sun','tree'),
-        BASIC('bin','bin','sun','tree'),
-        BASIC('fin','fin','sun','tree'),
-        BASIC('tip','tip','sun','tree'),
-        BASIC('lip','lip','sun','tree'),
-        BASIC('zip','zip','sun','tree')
+        BASIC('pin','pin','bin','fin'),
+        BASIC('bin','bin','pin','fin'),
+        BASIC('fin','fin','pin','bin'),
+        BASIC('tip','tip','lip','zip'),
+        BASIC('lip','lip','tip','zip'),
+        BASIC('zip','zip','tip','lip')
       ],
+      // Level 6 — short /a/ + /i/ mixed review
       [
-        BASIC('cat','cat','sun','tree'),
-        BASIC('sit','sit','sun','tree'),
-        BASIC('man','man','sun','tree'),
-        BASIC('bin','bin','sun','tree'),
-        BASIC('bag','bag','sun','tree'),
-        BASIC('tip','tip','sun','tree')
+        BASIC('cat','cat','bat','sit'),
+        BASIC('sit','sit','hit','cat'),
+        BASIC('man','man','can','pin'),
+        BASIC('bin','bin','pin','bag'),
+        BASIC('bag','bag','tag','big'),
+        BASIC('tip','tip','lip','tap')
       ],
+      // Level 7 — boss: /a/ + /i/ mixed review
       [
-        BASIC('bat','bat','sun','tree'),
-        BASIC('hit','hit','sun','tree'),
-        BASIC('pan','pan','sun','tree'),
-        BASIC('pig','pig','sun','tree'),
-        BASIC('cap','cap','sun','tree'),
-        BASIC('fin','fin','sun','tree')
+        BASIC('bat','bat','cat','bit'),
+        BASIC('hit','hit','bit','hat'),
+        BASIC('pan','pan','can','pin'),
+        BASIC('pig','pig','big','bag'),
+        BASIC('cap','cap','map','cup'),
+        BASIC('fin','fin','bin','dig')
       ]
     ]
   },
@@ -575,61 +582,68 @@ var WORD_BANK = {
   // World 2: Summer - short o + u
   phase3: {
     levels: [
+      // Level 1 — short /o/: -og / -op / -ot family
       [
-        BASIC('dog','dog','sun','tree'),
-        BASIC('log','log','sun','tree'),
-        BASIC('fog','fog','sun','tree'),
-        BASIC('hop','hop','sun','tree'),
-        BASIC('top','top','sun','tree'),
-        BASIC('pot','pot','sun','tree')
+        BASIC('dog','dog','log','fog'),
+        BASIC('log','log','dog','fog'),
+        BASIC('fog','fog','dog','log'),
+        BASIC('hop','hop','top','pot'),
+        BASIC('top','top','hop','pot'),
+        BASIC('pot','pot','hop','top')
       ],
+      // Level 2 — short /o/: -ot / -op / -ox family
       [
-        BASIC('hot','hot','sun','tree'),
-        BASIC('cot','cot','sun','tree'),
-        BASIC('dot','dot','sun','tree'),
-        BASIC('mop','mop','sun','tree'),
-        BASIC('cop','cop','sun','tree'),
-        BASIC('fox','fox','sun','tree')
+        BASIC('hot','hot','cot','dot'),
+        BASIC('cot','cot','hot','dot'),
+        BASIC('dot','dot','hot','cot'),
+        BASIC('mop','mop','cop','fox'),
+        BASIC('cop','cop','mop','fox'),
+        BASIC('fox','fox','mop','cop')
       ],
+      // Level 3 — short /o/: -ox / -og family
       [
-        BASIC('box','box','sun','tree'),
-        BASIC('cod','cod','sun','tree'),
-        BASIC('hog','hog','sun','tree'),
-        BASIC('bog','bog','sun','tree'),
-        BASIC('cog','cog','sun','tree'),
-        BASIC('ox','ox','sun','tree')
+        BASIC('box','box','cod','hog'),
+        BASIC('cod','cod','box','hog'),
+        BASIC('hog','hog','bog','cog'),
+        BASIC('bog','bog','hog','cog'),
+        BASIC('cog','cog','hog','bog'),
+        BASIC('ox','ox','cod','box')
       ],
+      // Level 4 — short /u/: -ug family
       [
-        BASIC('bug','bug','sun','tree'),
-        BASIC('hug','hug','sun','tree'),
-        BASIC('mug','mug','sun','tree'),
-        BASIC('rug','rug','sun','tree'),
-        BASIC('tug','tug','sun','tree'),
-        BASIC('jug','jug','sun','tree')
+        BASIC('bug','bug','hug','mug'),
+        BASIC('hug','hug','bug','mug'),
+        BASIC('mug','mug','bug','hug'),
+        BASIC('rug','rug','tug','jug'),
+        BASIC('tug','tug','rug','jug'),
+        BASIC('jug','jug','rug','tug')
       ],
+      // Level 5 — short /u/: -un / -up family
       [
-        BASIC('cup','cup','sun','tree'),
-        BASIC('pup','pup','sun','tree'),
-        BASIC('sun','sun','sun','tree'),
-        BASIC('run','run','sun','tree'),
-        BASIC('bun','bun','sun','tree'),
-        BASIC('gun','gun','sun','tree')
+        BASIC('cup','cup','pup','run'),
+        BASIC('pup','pup','cup','bun'),
+        BASIC('sun','sun','run','bun'),
+        BASIC('run','run','sun','bun'),
+        BASIC('bun','bun','sun','run'),
+        BASIC('gun','gun','cup','pup')
       ],
+      // Level 6 — short /o/ + /u/ mixed review
       [
-        BASIC('dog','dog','sun','tree'),
-        BASIC('bug','bug','sun','tree'),
-        BASIC('hop','hop','sun','tree'),
-        BASIC('cup','cup','sun','tree'),
-        BASIC('fox','fox','sun','tree'),
-        BASIC('bun','bun','sun','tree')
+        BASIC('dog','dog','log','bug'),
+        BASIC('bug','bug','mug','dog'),
+        BASIC('hop','hop','top','cup'),
+        BASIC('cup','cup','pup','cop'),
+        BASIC('fox','fox','cop','jug'),
+        BASIC('bun','bun','run','bog')
       ],
+      // Level 7 — boss: /o/ + /u/ mixed review
       [
-        BASIC('log','log','sun','tree'),
-        BASIC('mug','mug','sun','tree'),
-        BASIC('pot','pot','sun','tree'),
-        BASIC('sun','sun','sun','tree'),
-        BASIC('box','box','sun','tree'),
-        BASIC('hug','hug','sun','tree')
+        BASIC('log','log','fog','jug'),
+        BASIC('mug','mug','bug','mop'),
+        BASIC('pot','pot','hot','pup'),
+        BASIC('sun','sun','run','cot'),
+        BASIC('box','box','fox','bun'),
+        BASIC('hug','hug','rug','hog')
       ]
     ]
   },
@@ -637,61 +651,68 @@ var WORD_BANK = {
   // World 3: Autumn - short e + review
   phase4: {
     levels: [
+      // Level 1 — short /e/: -ed / -eg / -eb family
       [
-        BASIC('bed','bed','sun','tree'),
-        BASIC('red','red','sun','tree'),
-        BASIC('leg','leg','sun','tree'),
-        BASIC('web','web','sun','tree'),
-        BASIC('vet','vet','sun','tree'),
-        BASIC('peg','peg','sun','tree')
+        BASIC('bed','bed','red','leg'),
+        BASIC('red','red','bed','peg'),
+        BASIC('leg','leg','web','peg'),
+        BASIC('web','web','leg','peg'),
+        BASIC('vet','vet','pet','set'),
+        BASIC('peg','peg','leg','web')
       ],
+      // Level 2 — short /e/: -en / -et family
       [
-        BASIC('hen','hen','sun','tree'),
-        BASIC('ten','ten','sun','tree'),
-        BASIC('pen','pen','sun','tree'),
-        BASIC('jet','jet','sun','tree'),
-        BASIC('net','net','sun','tree'),
-        BASIC('den','den','sun','tree')
+        BASIC('hen','hen','ten','pen'),
+        BASIC('ten','ten','hen','pen'),
+        BASIC('pen','pen','hen','ten'),
+        BASIC('jet','jet','net','vet'),
+        BASIC('net','net','jet','pet'),
+        BASIC('den','den','hen','pen')
       ],
+      // Level 3 — short /e/ extended
       [
-        BASIC('pet','pet','sun','tree'),
-        BASIC('set','set','sun','tree'),
-        BASIC('wet','wet','sun','tree'),
-        BASIC('egg','egg','sun','tree'),
-        BASIC('gem','gem','sun','tree'),
-        WORD('bell','b - e - ll',[SND('b','/b/'),SND('e','/e/'),SND('ll','/l/',2)],'bell','sun','tree')
+        BASIC('pet','pet','vet','set'),
+        BASIC('set','set','pet','wet'),
+        BASIC('wet','wet','set','pet'),
+        BASIC('egg','egg','gem','hen'),
+        BASIC('gem','gem','egg','bed'),
+        BASIC('bell','bell','web','leg')
       ],
+      // Level 4 — short /e/ + /a/ mixed review
       [
-        BASIC('bed','bed','sun','tree'),
-        BASIC('bat','bat','sun','tree'),
-        BASIC('hen','hen','sun','tree'),
-        BASIC('hat','hat','sun','tree'),
-        BASIC('net','net','sun','tree'),
-        BASIC('nap','nap','sun','tree')
+        BASIC('bed','bed','bat','red'),
+        BASIC('bat','bat','hat','bed'),
+        BASIC('hen','hen','hat','net'),
+        BASIC('hat','hat','mat','hen'),
+        BASIC('net','net','nap','jet'),
+        BASIC('nap','nap','map','net')
       ],
+      // Level 5 — minimal pairs /e/ vs /i/
       [
-        BASIC('bed','bed','sun','tree'),
-        BASIC('bid','bid','sun','tree'),
-        BASIC('net','net','sun','tree'),
-        BASIC('nit','nit','sun','tree'),
-        BASIC('pin','pin','sun','tree'),
-        BASIC('pen','pen','sun','tree')
+        BASIC('bed','bed','bid','red'),
+        BASIC('bid','bid','big','bed'),
+        BASIC('net','net','nit','jet'),
+        BASIC('nit','nit','bit','net'),
+        BASIC('pin','pin','bin','pen'),
+        BASIC('pen','pen','hen','pin')
       ],
+      // Level 6 — full mixed review
       [
-        BASIC('cat','cat','sun','tree'),
-        BASIC('sit','sit','sun','tree'),
-        BASIC('bed','bed','sun','tree'),
-        BASIC('van','van','sun','tree'),
-        BASIC('tip','tip','sun','tree'),
-        BASIC('hen','hen','sun','tree')
+        BASIC('cat','cat','bat','sit'),
+        BASIC('sit','sit','bit','cat'),
+        BASIC('bed','bed','red','bug'),
+        BASIC('van','van','can','bin'),
+        BASIC('tip','tip','lip','tap'),
+        BASIC('hen','hen','pen','hat')
       ],
+      // Level 7 — boss: full 5-vowel review
       [
-        BASIC('bat','bat','sun','tree'),
-        BASIC('dig','dig','sun','tree'),
-        BASIC('red','red','sun','tree'),
-        BASIC('pin','pin','sun','tree'),
-        BASIC('hat','hat','sun','tree'),
-        BASIC('pet','pet','sun','tree')
+        BASIC('bat','bat','cat','bit'),
+        BASIC('dig','dig','big','dog'),
+        BASIC('red','red','bed','vet'),
+        BASIC('pin','pin','bin','pan'),
+        BASIC('hat','hat','mat','hot'),
+        BASIC('pet','pet','set','bit')
       ]
     ]
   },
@@ -699,61 +720,68 @@ var WORD_BANK = {
   // World 4: Winter - full vowel review
   phase5: {
     levels: [
+      // Level 1 — /a/ vs /o/ minimal pairs
       [
-        BASIC('cat','cat','sun','tree'),
-        BASIC('cot','cot','sun','tree'),
-        BASIC('map','map','sun','tree'),
-        BASIC('mop','mop','sun','tree'),
-        BASIC('bag','bag','sun','tree'),
-        BASIC('bog','bog','sun','tree')
+        BASIC('cat','cat','cot','cap'),
+        BASIC('cot','cot','cat','cop'),
+        BASIC('map','map','mop','mat'),
+        BASIC('mop','mop','map','cop'),
+        BASIC('bag','bag','bog','bat'),
+        BASIC('bog','bog','bag','dog')
       ],
+      // Level 2 — /i/ vs /u/ minimal pairs
       [
-        BASIC('sit','sit','sun','tree'),
-        BASIC('sun','sun','sun','tree'),
-        BASIC('bin','bin','sun','tree'),
-        BASIC('bug','bug','sun','tree'),
-        BASIC('tip','tip','sun','tree'),
-        BASIC('tug','tug','sun','tree')
+        BASIC('sit','sit','sun','bit'),
+        BASIC('sun','sun','sit','run'),
+        BASIC('bin','bin','bun','pin'),
+        BASIC('bug','bug','big','bun'),
+        BASIC('tip','tip','tug','lip'),
+        BASIC('tug','tug','tip','bug')
       ],
+      // Level 3 — /o/ vs /e/ minimal pairs
       [
-        BASIC('hop','hop','sun','tree'),
-        BASIC('hen','hen','sun','tree'),
-        BASIC('dog','dog','sun','tree'),
-        BASIC('den','den','sun','tree'),
-        BASIC('pot','pot','sun','tree'),
-        BASIC('pet','pet','sun','tree')
+        BASIC('hop','hop','hen','hot'),
+        BASIC('hen','hen','hop','ten'),
+        BASIC('dog','dog','den','fog'),
+        BASIC('den','den','dog','ten'),
+        BASIC('pot','pot','pet','top'),
+        BASIC('pet','pet','pot','set')
       ],
+      // Level 4 — full mixed review
       [
-        BASIC('cat','cat','sun','tree'),
-        BASIC('sit','sit','sun','tree'),
-        BASIC('dog','dog','sun','tree'),
-        BASIC('van','van','sun','tree'),
-        BASIC('tip','tip','sun','tree'),
-        BASIC('hop','hop','sun','tree')
+        BASIC('cat','cat','cot','bat'),
+        BASIC('sit','sit','set','bit'),
+        BASIC('dog','dog','dig','fog'),
+        BASIC('van','van','can','bin'),
+        BASIC('tip','tip','top','lip'),
+        BASIC('hop','hop','top','hot')
       ],
+      // Level 5 — /u/ + /e/ + /a/ mix
       [
-        BASIC('bug','bug','sun','tree'),
-        BASIC('bed','bed','sun','tree'),
-        BASIC('cap','cap','sun','tree'),
-        BASIC('bun','bun','sun','tree'),
-        BASIC('hen','hen','sun','tree'),
-        BASIC('map','map','sun','tree')
+        BASIC('bug','bug','bag','bed'),
+        BASIC('bed','bed','bid','bug'),
+        BASIC('cap','cap','cup','map'),
+        BASIC('bun','bun','bin','sun'),
+        BASIC('hen','hen','hat','ten'),
+        BASIC('map','map','mop','cap')
       ],
+      // Level 6 — full 5-vowel challenge
       [
-        BASIC('bat','bat','sun','tree'),
-        BASIC('dig','dig','sun','tree'),
-        BASIC('hot','hot','sun','tree'),
-        BASIC('cup','cup','sun','tree'),
-        BASIC('web','web','sun','tree'),
-        BASIC('van','van','sun','tree')
+        BASIC('bat','bat','bit','mat'),
+        BASIC('dig','dig','dog','big'),
+        BASIC('hot','hot','hat','top'),
+        BASIC('cup','cup','cap','pup'),
+        BASIC('web','web','wet','peg'),
+        BASIC('van','van','can','pin')
       ],
+      // Level 7 — boss: all-vowels finale
       [
-        BASIC('cat','cat','sun','tree'),
-        BASIC('sit','sit','sun','tree'),
-        BASIC('dog','dog','sun','tree'),
-        BASIC('bug','bug','sun','tree'),
-        BASIC('bed','bed','sun','tree'),
-        BASIC('van','van','sun','tree')
+        BASIC('cat','cat','cot','bat'),
+        BASIC('sit','sit','set','bit'),
+        BASIC('dog','dog','fog','bog'),
+        BASIC('bug','bug','bun','mug'),
+        BASIC('bed','bed','web','red'),
+        BASIC('van','van','can','man')
       ]
     ]
   }
