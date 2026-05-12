@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 function shuffle(arr) {
   var a = arr.slice();
   for (var i = a.length - 1; i > 0; i--) {
@@ -134,7 +134,7 @@ function renderChoiceContent(btn, choice) {
 
   var fallback = document.createElement('span');
   fallback.className = 'img-fallback';
-  fallback.textContent = choice.fb || 'ðŸ–¼ï¸';
+  fallback.textContent = choice.fb || '🖼️';
 
   if (choice.img) {
     var img = document.createElement('img');
@@ -165,7 +165,7 @@ function setResultStars(isCorrect) {
   if (!box) return;
   if (isCorrect) {
     box.className = 'sr-stars';
-    box.innerHTML = '<div class="sr-star">â­</div><div class="sr-star">â­</div><div class="sr-star">â­</div>';
+    box.innerHTML = '<div class="sr-star">⭐</div><div class="sr-star">⭐</div><div class="sr-star">⭐</div>';
   } else {
     box.className = 'sr-stars zero';
     box.innerHTML = '<div class="sr-zero">0 Stars This Time</div>';
@@ -175,30 +175,30 @@ function setResultStars(isCorrect) {
 function showQuestionResult(isCorrect, correctBtn) {
   var lv = S.queue[S.qIdx];
   var wdata = WORLDS[S.cWorld];
-  setEmmaImg('srChar', wdata.stageKey);
-  document.getElementById('srWord').textContent = isCorrect ? lv.w+' âœ“' : lv.w;
+  setLeahImg('srChar', wdata.stageKey);
+  document.getElementById('srWord').textContent = isCorrect ? lv.w+' ✓' : lv.w;
   setResultStars(isCorrect);
 
   var srBtn = document.getElementById('srBtn');
   if (S.qIdx < S.queue.length-1) {
-    srBtn.textContent = 'ðŸŒŸ Next Word!';
+    srBtn.textContent = '🌟 Next Word!';
   } else {
     srBtn.textContent = S.correct >= PASS_THRESHOLD ?
-      (S.cLevel < 6 ? 'ðŸŽ‰ Level Complete!' :
-        (S.mastery[S.cWorld] + 1 < requiredWinsForWorld(S.cWorld) ? 'ðŸ” One More Secure Win' : 'ðŸŒ World Complete!')) :
-      'ðŸ”„ Try This Level Again';
+      (S.cLevel < 6 ? '🎉 Level Complete!' :
+        (S.mastery[S.cWorld] + 1 < requiredWinsForWorld(S.cWorld) ? '🔁 One More Secure Win' : '🌍 World Complete!')) :
+      '🔄 Try This Level Again';
   }
 
   if (isCorrect) {
-    document.getElementById('srTag').textContent = 'Well done, Emma!';
+    document.getElementById('srTag').textContent = 'Well done, Leah!';
     document.getElementById('srName').textContent = 'You read "'+lv.w+'"!';
     document.getElementById('srDesc').textContent =
-      S.correct+' of '+S.queue.length+' correct so far! Keep going! ðŸŒŸ';
+      S.correct+' of '+S.queue.length+' correct so far! Keep going! 🌟';
   } else {
     document.getElementById('srTag').textContent = 'Nice trying!';
     document.getElementById('srName').textContent = 'The word was "'+lv.w+'".';
     document.getElementById('srDesc').textContent =
-      'Emma can keep going. The correct picture is highlighted, and only the first tap counted for scoring.';
+      'Leah can keep going. The correct picture is highlighted, and only the first tap counted for scoring.';
     if (correctBtn) {
       correctBtn.classList.add('ok');
       correctBtn.style.borderColor = '#22c55e';
@@ -214,7 +214,7 @@ function showQuestionResult(isCorrect, correctBtn) {
   go('sr');
 }
 
-function setEmmaImg(elId, stageKey) {
+function setLeahImg(elId, stageKey) {
   var el = document.getElementById(elId);
   if (!el) return;
   var src = STAGE_IMGS[stageKey] || '';
@@ -229,7 +229,7 @@ function setEmmaImg(elId, stageKey) {
       : '';
     el.innerHTML =
       '<div class="seasonal-portrait ' + stageClass + unlockClass + '">' +
-        '<img class="seasonal-photo" src="' + src + '" alt="Emma"/>' +
+        '<img class="seasonal-photo" src="' + src + '" alt="Leah"/>' +
         '<span class="seasonal-sparkle s1"></span>' +
         '<span class="seasonal-sparkle s2"></span>' +
         '<span class="seasonal-sparkle s3"></span>' +
@@ -240,25 +240,25 @@ function setEmmaImg(elId, stageKey) {
   } else {
     el.style.fontSize = '';
     el.style.overflow = '';
-    el.textContent = 'â­';
+    el.textContent = '⭐';
   }
 }
 
-function renderMapEmma(stageKey) {
-  var host = document.getElementById('mapEmma');
+function renderMapLeah(stageKey) {
+  var host = document.getElementById('mapLeah');
   if (!host) return;
   var src = STAGE_IMGS[stageKey] || '';
   if (src) {
     var stageClass = String(stageKey || '').toLowerCase();
     host.innerHTML =
-      '<div id="mapEmmaImg" class="seasonal-portrait seasonal-map ' + stageClass + '">' +
-        '<img class="seasonal-photo" src="' + src + '" alt="Emma"/>' +
+      '<div id="mapLeahImg" class="seasonal-portrait seasonal-map ' + stageClass + '">' +
+        '<img class="seasonal-photo" src="' + src + '" alt="Leah"/>' +
         '<span class="seasonal-sparkle s1"></span>' +
         '<span class="seasonal-sparkle s2"></span>' +
         '<span class="seasonal-sparkle s3"></span>' +
       '</div>';
   } else {
-    host.innerHTML = '<div id="mapEmmaImg">â­</div>';
+    host.innerHTML = '<div id="mapLeahImg">⭐</div>';
   }
 }
 
@@ -274,12 +274,12 @@ function conf(id) {
 }
 
 function sparkle(draw, x, y, sz, col, a) {
-  // draw is ImageDraw-like â€” not used in JS; sparkles are CSS only here
+  // draw is ImageDraw-like — not used in JS; sparkles are CSS only here
 }
 
-// â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-// â•‘                    SCREEN NAVIGATION                     â•‘
-// â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ╔══════════════════════════════════════════════════════════╗
+// ║                    SCREEN NAVIGATION                     ║
+// ╚══════════════════════════════════════════════════════════╝
 function go(id) {
   document.querySelectorAll('.sc').forEach(function(s){ s.classList.remove('on'); });
   document.getElementById(id).classList.add('on');
@@ -287,9 +287,9 @@ function go(id) {
 
 function goMap() { renderMap(S.worldIdx); go('sm'); }
 
-// â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-// â•‘                      MAP RENDERING                       â•‘
-// â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ╔══════════════════════════════════════════════════════════╗
+// ║                      MAP RENDERING                       ║
+// ╚══════════════════════════════════════════════════════════╝
 function renderMap(wIdx) {
   S.worldIdx = wIdx;
   var w = WORLDS[wIdx];
@@ -302,11 +302,11 @@ function renderMap(wIdx) {
   titleEl.textContent = w.em + ' ' + w.name;
   titleEl.style.color = w.mapTitleColor;
 
-  document.getElementById('mapStars').textContent   = 'â­ ' + S.stars;
-  document.getElementById('mapStarBtn').textContent = 'â­ ' + S.stars;
+  document.getElementById('mapStars').textContent   = '⭐ ' + S.stars;
+  document.getElementById('mapStarBtn').textContent = '⭐ ' + S.stars;
 
-  // update map Emma avatar to current world stage
-  renderMapEmma(w.stageKey);
+  // update map Leah avatar to current world stage
+  renderMapLeah(w.stageKey);
 
   // world tabs
   var tabs = document.getElementById('worldTabs');
@@ -327,7 +327,7 @@ function renderMap(wIdx) {
   var strip = document.createElement('div');
   strip.className = 'world-strip';
   strip.style.color = w.mapTitleColor;
-  strip.innerHTML = '<div class="ws-em">'+w.em+'</div><div><div class="ws-name" style="color:'+w.mapTitleColor+'">'+w.name+'</div><div class="ws-phase">'+w.phase+' Â· '+w.desc+'</div></div>';
+  strip.innerHTML = '<div class="ws-em">'+w.em+'</div><div><div class="ws-name" style="color:'+w.mapTitleColor+'">'+w.name+'</div><div class="ws-phase">'+w.phase+' · '+w.desc+'</div></div>';
   scr.appendChild(strip);
 
   var worldUnlocked = isWorldUnlocked(wIdx);
@@ -399,7 +399,7 @@ function renderMap(wIdx) {
     icon.setAttribute('text-anchor','middle');
     icon.setAttribute('dominant-baseline','central');
     icon.setAttribute('font-size', isBoss ? '20' : '16');
-    icon.textContent = isBoss?'â­': isDone?'âœ…': isActive?'â–¶': 'ðŸ”’';
+    icon.textContent = isBoss?'⭐': isDone?'✅': isActive?'▶': '🔒';
     g.appendChild(icon);
 
     var label = document.createElementNS(svgNS, 'text');
@@ -409,7 +409,7 @@ function renderMap(wIdx) {
     label.setAttribute('font-weight','800');
     label.setAttribute('fill', isLocked ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.6)');
     label.setAttribute('font-family','Nunito,sans-serif');
-    label.textContent = isBoss?'â­ Boss': isReview?'Review': 'Level '+(i+1);
+    label.textContent = isBoss?'⭐ Boss': isReview?'Review': 'Level '+(i+1);
     g.appendChild(label);
 
     if (!isActive) svg.appendChild(g);
@@ -429,13 +429,13 @@ function renderMap(wIdx) {
     }
   }
   var pb = document.getElementById('playBtn');
-  pb.textContent = 'â–¶ '+WORLDS[aw].em+' Level '+(al+1);
+  pb.textContent = '▶ '+WORLDS[aw].em+' Level '+(al+1);
   pb.onclick = function(){ startLevel(aw, al); };
 }
 
-// â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-// â•‘                   CHALLENGE LOGIC                        â•‘
-// â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ╔══════════════════════════════════════════════════════════╗
+// ║                   CHALLENGE LOGIC                        ║
+// ╚══════════════════════════════════════════════════════════╝
 function startLevel(wIdx, lvIdx) {
   S.cWorld = wIdx; S.cLevel = lvIdx;
   var key = levelKey(wIdx, lvIdx);
@@ -478,7 +478,7 @@ function buildQuestion() {
   document.getElementById('cGuide').textContent = w.guide;
   var bub = document.getElementById('cBubble');
   bub.style.borderColor = w.bubbleBorder; bub.style.color = w.bubbleColor;
-  bub.textContent = 'Look at the sounds, blend the word, then choose the picture. âœ¨';
+  bub.textContent = 'Look at the sounds, blend the word, then choose the picture. ✨';
 
   document.getElementById('cPhaseTag').textContent = w.phase;
   document.getElementById('cPhaseTag').style.cssText = 'background:rgba(255,255,255,.85);color:'+w.bubbleColor;
@@ -490,7 +490,7 @@ function buildQuestion() {
   document.getElementById('progressFill').style.width = pct + '%';
   document.getElementById('progressLabel').textContent =
     'Question '+(S.qIdx+1)+' of '+S.queue.length+
-    (S.qIdx > 0 ? '  âœ… '+S.correct+' correct' : '');
+    (S.qIdx > 0 ? '  ✅ '+S.correct+' correct' : '');
 
   document.getElementById('cWordDisplay').textContent = lv.d;
   document.getElementById('blendZone').style.borderColor = w.blendBorderColor;
@@ -540,7 +540,7 @@ function buildQuestion() {
     renderChoiceContent(btn, ch);
     var tick = document.createElement('span');
     tick.className = 'tick-ov';
-    tick.textContent = 'âœ…';
+    tick.textContent = '✅';
     btn.appendChild(tick);
     btn.onclick = (function(c,b){ return function(){ pickAnswer(c,b); }; })(ch, btn);
     ic.appendChild(btn);
@@ -559,8 +559,8 @@ function tapCrystal(i, total) {
     setTimeout(function() {
       document.getElementById('blendPh').style.display = 'none';
       var bw = document.getElementById('blendWd');
-      bw.style.display = 'block'; bw.textContent = 'Which picture? ðŸ‘‡';
-      document.getElementById('cBubble').textContent = 'Find the right picture! ðŸŒŸ';
+      bw.style.display = 'block'; bw.textContent = 'Which picture? 👇';
+      document.getElementById('cBubble').textContent = 'Find the right picture! 🌟';
     }, 280);
   }
 }
@@ -578,13 +578,13 @@ function pickAnswer(choice, btn) {
     btn.style.boxShadow = '0 0 28px '+w.imgOkShadow;
     S.correct++;
     S.stars += 3;
-    document.getElementById('cBubble').textContent = 'Yes, Emma! That was the right picture. ðŸŒŸ';
+    document.getElementById('cBubble').textContent = 'Yes, Leah! That was the right picture. 🌟';
     setTimeout(function() {
       showQuestionResult(true, correctBtn);
     }, CORRECT_RESULT_DELAY_MS);
   } else {
     btn.classList.add('no'); btn.style.borderColor='#ef4444';
-    document.getElementById('cBubble').textContent = 'Nice try. Here is the right picture for this word. ðŸ’›';
+    document.getElementById('cBubble').textContent = 'Nice try. Here is the right picture for this word. 💛';
     if (correctBtn) {
       correctBtn.classList.add('ok');
       correctBtn.style.borderColor = '#22c55e';
@@ -602,7 +602,7 @@ function nextQuestion() {
     // more questions in this level
     buildQuestion(); go('sc2');
   } else {
-    // level finished â€” check pass
+    // level finished — check pass
     if (S.correct >= PASS_THRESHOLD) {
       levelPassed();
     } else {
@@ -620,7 +620,7 @@ function levelPassed() {
   var currentKey = levelKey(S.cWorld, S.cLevel);
   S.levelAttempts[currentKey] = 0;
   if (S.progress[S.cWorld] <= S.cLevel) S.progress[S.cWorld] = S.cLevel+1;
-  document.getElementById('mapStarBtn').textContent = 'â­ '+S.stars;
+  document.getElementById('mapStarBtn').textContent = '⭐ '+S.stars;
 
   if (S.cLevel === 6) {
     var wdata = WORLDS[S.cWorld];
@@ -628,19 +628,19 @@ function levelPassed() {
     var wuBg = document.getElementById('wuBg');
     S.mastery[S.cWorld] = Math.min(requiredWinsForWorld(S.cWorld), S.mastery[S.cWorld] + 1);
     var worldMastered = S.mastery[S.cWorld] >= requiredWinsForWorld(S.cWorld);
-    document.getElementById('wuTop').textContent = 'ðŸŒŸ World Complete! ðŸŒŸ';
+    document.getElementById('wuTop').textContent = '🌟 World Complete! 🌟';
     wuBg.className = 'wu-bg ' + String(wdata.stageKey || '').toLowerCase();
     wuBg.style.background =
       nextW <= 3 ? WORLDS[S.cWorld].nextBg : 'radial-gradient(ellipse at 50% 30%,#0a1840,#050d30 50%,#020818)';
-    setEmmaImg('wuChar', wdata.stageKey);
+    setLeahImg('wuChar', wdata.stageKey);
     if (worldMastered) {
       document.getElementById('wuSubtitle').textContent = wdata.unlock.tag;
       document.getElementById('wuName').textContent = wdata.unlock.name;
       document.getElementById('wuDesc').textContent = wdata.unlock.desc;
     } else {
-      document.getElementById('wuSubtitle').textContent = 'ðŸ” Keep Blending!';
+      document.getElementById('wuSubtitle').textContent = '🔁 Keep Blending!';
       document.getElementById('wuName').textContent = 'Secure Win '+S.mastery[S.cWorld]+' of '+requiredWinsForWorld(S.cWorld);
-      document.getElementById('wuDesc').textContent = 'Emma needs one more secure boss-level success before the next world unlocks. Review is still active, so this is a practice win, not just a lucky pass.';
+      document.getElementById('wuDesc').textContent = 'Leah needs one more secure boss-level success before the next world unlocks. Review is still active, so this is a practice win, not just a lucky pass.';
     }
     conf('wuConf');
     if (worldMastered && nextW <= 3) S.worldIdx = nextW;
@@ -656,13 +656,13 @@ function levelPassed() {
   }
 }
 
-// â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-// â•‘                      INIT                                â•‘
-// â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ╔══════════════════════════════════════════════════════════╗
+// ║                      INIT                                ║
+// ╚══════════════════════════════════════════════════════════╝
 (function init(){
   // Snowflakes on intro
   var sn = document.getElementById('iSnow');
-  ['â„','â…','â†','Â·'].forEach(function(ch){
+  ['❄','❅','❆','·'].forEach(function(ch){
     for(var i=0;i<5;i++){
       var el=document.createElement('span'); el.className='sf';
       var sz=10+Math.random()*16;
