@@ -510,285 +510,236 @@ function BASIC(word, ok, no1, no2) {
 
 var WORD_BANK = {
 
-  // World 1: Final consonant blends / CVCC
+  // ── Phase 2: simple CVC practice, widening gradually across mini-sets ──
   phase2: {
     levels: [
-      // Level 1
       [
-        BASIC('hand','hand','tent','lamp'),
-        BASIC('tent','tent','hand','lamp'),
-        BASIC('lamp','lamp','milk','belt'),
-        BASIC('milk','milk','lamp','belt'),
-        BASIC('belt','belt','milk','nest'),
-        BASIC('nest','nest','belt','tent')
+        WORD('sat','s — a — t',[SND('s','/s/'),SND('a','/a/'),SND('t','/t/')],'🪑','🐱','☀️'),
+        WORD('pin','p — i — n',[SND('p','/p/'),SND('i','/ɪ/'),SND('n','/n/')],'📌','🐷','🍳'),
+        WORD('tap','t — a — p',[SND('t','/t/'),SND('a','/a/'),SND('p','/p/')],'🚰','🎩','🌙'),
+        WORD('pan','p — a — n',[SND('p','/p/'),SND('a','/a/'),SND('n','/n/')],'🍳','🧢','🐟'),
+        WORD('sit','s — i — t',[SND('s','/s/'),SND('i','/ɪ/'),SND('t','/t/')],'🪑','🐔','🧤'),
+        WORD('sip','s — i — p',[SND('s','/s/'),SND('i','/ɪ/'),SND('p','/p/')],'🥤','🌳','🐸'),
+        WORD('mat','m — a — t',[SND('m','/m/'),SND('a','/a/'),SND('t','/t/')],'🧺','🚗','🐝'),
+        WORD('nap','n — a — p',[SND('n','/n/'),SND('a','/a/'),SND('p','/p/')],'😴','🧁','🦆')
       ],
-      // Level 2
       [
-        BASIC('sand','sand','pond','mask'),
-        BASIC('pond','pond','sand','desk'),
-        BASIC('mask','mask','desk','vest'),
-        BASIC('desk','desk','mask','sink'),
-        BASIC('vest','vest','sink','sand'),
-        BASIC('sink','sink','vest','desk')
+        WORD('dog','d — o — g',[SND('d','/d/'),SND('o','/ɒ/'),SND('g','/g/')],'🐶','🐱','🦊'),
+        WORD('dig','d — i — g',[SND('d','/d/'),SND('i','/ɪ/'),SND('g','/g/')],'⛏️','🍎','🦋'),
+        WORD('pot','p — o — t',[SND('p','/p/'),SND('o','/ɒ/'),SND('t','/t/')],'🫕','🐖','🎵'),
+        WORD('top','t — o — p',[SND('t','/t/'),SND('o','/ɒ/'),SND('p','/p/')],'🧢','🪵','🐟'),
+        WORD('bag','b — a — g',[SND('b','/b/'),SND('a','/a/'),SND('g','/g/')],'👜','🐸','🌳'),
+        WORD('cab','c — a — b',[SND('c','/k/'),SND('a','/a/'),SND('b','/b/')],'🚕','🐝','🥁'),
+        WORD('log','l — o — g',[SND('l','/l/'),SND('o','/ɒ/'),SND('g','/g/')],'🪵','🌿','🐸'),
+        WORD('cot','c — o — t',[SND('c','/k/'),SND('o','/ɒ/'),SND('t','/t/')],'🛏️','🚂','🐟')
       ],
-      // Level 3
       [
-        BASIC('gift','gift','tank','pump'),
-        BASIC('tank','tank','gift','pump'),
-        BASIC('pump','pump','jump','ant'),
-        BASIC('jump','jump','pump','tent'),
-        BASIC('ant','ant','gift','tent'),
-        BASIC('tent','tent','ant','tank')
+        WORD('sun','s — u — n',[SND('s','/s/'),SND('u','/ʌ/'),SND('n','/n/')],'☀️','🌙','⭐'),
+        WORD('bus','b — u — s',[SND('b','/b/'),SND('u','/ʌ/'),SND('s','/s/')],'🚌','🐛','🪵'),
+        WORD('cup','c — u — p',[SND('c','/k/'),SND('u','/ʌ/'),SND('p','/p/')],'☕','🎩','🐟'),
+        WORD('mug','m — u — g',[SND('m','/m/'),SND('u','/ʌ/'),SND('g','/g/')],'☕','🐶','🌿'),
+        WORD('rug','r — u — g',[SND('r','/r/'),SND('u','/ʌ/'),SND('g','/g/')],'🛋️','🐛','🏃'),
+        WORD('run','r — u — n',[SND('r','/r/'),SND('u','/ʌ/'),SND('n','/n/')],'🏃','🛏️','🐟'),
+        WORD('mud','m — u — d',[SND('m','/m/'),SND('u','/ʌ/'),SND('d','/d/')],'🟤','🐄','🌷'),
+        WORD('bun','b — u — n',[SND('b','/b/'),SND('u','/ʌ/'),SND('n','/n/')],'🍞','🧢','🐸')
       ],
-      // Level 4
       [
-        BASIC('hand','hand','nest','desk'),
-        BASIC('nest','nest','hand','desk'),
-        BASIC('desk','desk','pond','sink'),
-        BASIC('pond','pond','desk','mask'),
-        BASIC('sink','sink','pond','mask'),
-        BASIC('mask','mask','sink','hand')
+        WORD('hen','h — e — n',[SND('h','/h/'),SND('e','/ɛ/'),SND('n','/n/')],'🐔','🐧','🦆'),
+        WORD('pen','p — e — n',[SND('p','/p/'),SND('e','/ɛ/'),SND('n','/n/')],'🖊️','🐓','🥁'),
+        WORD('net','n — e — t',[SND('n','/n/'),SND('e','/ɛ/'),SND('t','/t/')],'🥅','🐟','🌿'),
+        WORD('bed','b — e — d',[SND('b','/b/'),SND('e','/ɛ/'),SND('d','/d/')],'🛏️','🐝','🏖️'),
+        WORD('red','r — e — d',[SND('r','/r/'),SND('e','/ɛ/'),SND('d','/d/')],'🟥','🐸','🌳'),
+        WORD('leg','l — e — g',[SND('l','/l/'),SND('e','/ɛ/'),SND('g','/g/')],'🦵','🐟','🎩'),
+        WORD('peg','p — e — g',[SND('p','/p/'),SND('e','/ɛ/'),SND('g','/g/')],'📌','🧢','🌙'),
+        WORD('ten','t — e — n',[SND('t','/t/'),SND('e','/ɛ/'),SND('n','/n/')],'🔟','🐔','🌿')
       ],
-      // Level 5
       [
-        BASIC('belt','belt','milk','gift'),
-        BASIC('milk','milk','belt','vest'),
-        BASIC('gift','gift','vest','pump'),
-        BASIC('vest','vest','gift','tank'),
-        BASIC('pump','pump','tank','belt'),
-        BASIC('tank','tank','pump','milk')
-      ],
-      // Level 6
-      [
-        BASIC('tent','tent','sand','lamp'),
-        BASIC('sand','sand','tent','jump'),
-        BASIC('lamp','lamp','jump','hand'),
-        BASIC('jump','jump','lamp','sink'),
-        BASIC('hand','hand','tent','sink'),
-        BASIC('sink','sink','hand','sand')
-      ],
-      // Level 7 Boss
-      [
-        BASIC('hand','hand','desk','milk'),
-        BASIC('desk','desk','hand','pond'),
-        BASIC('milk','milk','desk','gift'),
-        BASIC('pond','pond','milk','sink'),
-        BASIC('gift','gift','pond','sink'),
-        BASIC('sink','sink','gift','hand')
+        WORD('hat','h — a — t',[SND('h','/h/'),SND('a','/a/'),SND('t','/t/')],'🎩','🐶','🌞'),
+        WORD('bat','b — a — t',[SND('b','/b/'),SND('a','/a/'),SND('t','/t/')],'🦇','🧢','🐟'),
+        WORD('fan','f — a — n',[SND('f','/f/'),SND('a','/a/'),SND('n','/n/')],'🪭','🐔','🛏️'),
+        WORD('rat','r — a — t',[SND('r','/r/'),SND('a','/a/'),SND('t','/t/')],'🐀','🌳','🪵'),
+        WORD('cap','c — a — p',[SND('c','/k/'),SND('a','/a/'),SND('p','/p/')],'🧢','🐶','🍞'),
+        WORD('ram','r — a — m',[SND('r','/r/'),SND('a','/a/'),SND('m','/m/')],'🐏','🌿','🐠'),
+        WORD('lip','l — i — p',[SND('l','/l/'),SND('i','/ɪ/'),SND('p','/p/')],'👄','🧤','🐝'),
+        WORD('ham','h — a — m',[SND('h','/h/'),SND('a','/a/'),SND('m','/m/')],'🍖','🌙','🐔')
       ]
     ]
   },
 
-  // World 2: Beginning consonant blends / CCVC and CCVCC
+  // ── Phase 3: one new digraph/vowel team focus per mini-set ──
   phase3: {
     levels: [
-      // Level 1
       [
-        BASIC('flag','flag','frog','drum'),
-        BASIC('frog','frog','flag','crab'),
-        BASIC('drum','drum','frog','plum'),
-        BASIC('crab','crab','drum','clip'),
-        BASIC('plum','plum','crab','clip'),
-        BASIC('clip','clip','plum','flag')
+        WORD('ship','sh — i — p',[SND('sh','/ʃ/',2),SND('i','/ɪ/'),SND('p','/p/')],'🚢','🐑','🧤'),
+        WORD('shop','sh — o — p',[SND('sh','/ʃ/',2),SND('o','/ɒ/'),SND('p','/p/')],'🛍️','🐷','🌳'),
+        WORD('fish','f — i — sh',[SND('f','/f/'),SND('i','/ɪ/'),SND('sh','/ʃ/',2)],'🐟','🦆','🧢'),
+        WORD('dish','d — i — sh',[SND('d','/d/'),SND('i','/ɪ/'),SND('sh','/ʃ/',2)],'🍽️','🌞','🐛'),
+        WORD('shed','sh — e — d',[SND('sh','/ʃ/',2),SND('e','/ɛ/'),SND('d','/d/')],'🛖','🐔','🚗'),
+        WORD('shell','sh — e — ll',[SND('sh','/ʃ/',2),SND('e','/ɛ/'),SND('ll','/l/',2)],'🐚','🐶','🥁'),
+        WORD('bush','b — u — sh',[SND('b','/b/'),SND('u','/ʌ/'),SND('sh','/ʃ/',2)],'🌿','🐶','🧢'),
+        WORD('cash','c — a — sh',[SND('c','/k/'),SND('a','/a/'),SND('sh','/ʃ/',2)],'💰','🐟','🌙')
       ],
-      // Level 2
       [
-        BASIC('sled','sled','slug','clam'),
-        BASIC('slug','slug','sled','plug'),
-        BASIC('clam','clam','plug','crib'),
-        BASIC('plug','plug','clam','pram'),
-        BASIC('crib','crib','plug','pram'),
-        BASIC('pram','pram','crib','sled')
+        WORD('chin','ch — i — n',[SND('ch','/tʃ/',2),SND('i','/ɪ/'),SND('n','/n/')],'🧒','🌭','🪑'),
+        WORD('chat','ch — a — t',[SND('ch','/tʃ/',2),SND('a','/a/'),SND('t','/t/')],'💬','🐱','🎩'),
+        WORD('chip','ch — i — p',[SND('ch','/tʃ/',2),SND('i','/ɪ/'),SND('p','/p/')],'🍟','🐟','🌳'),
+        WORD('chop','ch — o — p',[SND('ch','/tʃ/',2),SND('o','/ɒ/'),SND('p','/p/')],'🪓','🐷','🎵'),
+        WORD('chick','ch — i — ck',[SND('ch','/tʃ/',2),SND('i','/ɪ/'),SND('ck','/k/',2)],'🐥','🌙','🪵'),
+        WORD('check','ch — e — ck',[SND('ch','/tʃ/',2),SND('e','/ɛ/'),SND('ck','/k/',2)],'✅','🐟','🧢'),
+        WORD('rich','r — i — ch',[SND('r','/r/'),SND('i','/ɪ/'),SND('ch','/tʃ/',2)],'💰','🌿','🐔'),
+        WORD('bench','b — e — n — ch',[SND('b','/b/'),SND('e','/ɛ/'),SND('n','/n/'),SND('ch','/tʃ/',2)],'🪑','🐝','🍎')
       ],
-      // Level 3
       [
-        BASIC('brick','brick','clock','truck'),
-        BASIC('clock','clock','brick','grass'),
-        BASIC('truck','truck','clock','dress'),
-        BASIC('grass','grass','truck','block'),
-        BASIC('dress','dress','grass','block'),
-        BASIC('block','block','dress','brick')
+        WORD('ring','r — i — ng',[SND('r','/r/'),SND('i','/ɪ/'),SND('ng','/ŋ/',2)],'💍','🐸','🔔'),
+        WORD('sing','s — i — ng',[SND('s','/s/'),SND('i','/ɪ/'),SND('ng','/ŋ/',2)],'🎤','🐟','🌞'),
+        WORD('song','s — o — ng',[SND('s','/s/'),SND('o','/ɒ/'),SND('ng','/ŋ/',2)],'🎵','🐔','🛏️'),
+        WORD('bang','b — a — ng',[SND('b','/b/'),SND('a','/a/'),SND('ng','/ŋ/',2)],'💥','🌙','🐟'),
+        WORD('king','k — i — ng',[SND('k','/k/'),SND('i','/ɪ/'),SND('ng','/ŋ/',2)],'👑','🪵','🐝'),
+        WORD('wing','w — i — ng',[SND('w','/w/'),SND('i','/ɪ/'),SND('ng','/ŋ/',2)],'🪽','🐶','🍞'),
+        WORD('gong','g — o — ng',[SND('g','/g/'),SND('o','/ɒ/'),SND('ng','/ŋ/',2)],'🔔','🐶','🍞'),
+        WORD('hang','h — a — ng',[SND('h','/h/'),SND('a','/a/'),SND('ng','/ŋ/',2)],'🪝','🎩','🐛')
       ],
-      // Level 4
       [
-        BASIC('frog','frog','crib','grass'),
-        BASIC('crib','crib','frog','plug'),
-        BASIC('grass','grass','crib','drum'),
-        BASIC('plug','plug','grass','clock'),
-        BASIC('drum','drum','plug','clock'),
-        BASIC('clock','clock','drum','frog')
+        WORD('rain','r — ai — n',[SND('r','/r/'),SND('ai','/eɪ/',2),SND('n','/n/')],'🌧️','🚂','🌈'),
+        WORD('tail','t — ai — l',[SND('t','/t/'),SND('ai','/eɪ/',2),SND('l','/l/')],'🐒','🪵','🐟'),
+        WORD('sail','s — ai — l',[SND('s','/s/'),SND('ai','/eɪ/',2),SND('l','/l/')],'⛵','🐸','🌿'),
+        WORD('pain','p — ai — n',[SND('p','/p/'),SND('ai','/eɪ/',2),SND('n','/n/')],'🤕','🌞','🐔'),
+        WORD('feet','f — ee — t',[SND('f','/f/'),SND('ee','/iː/',2),SND('t','/t/')],'🦶','🌲','🐠'),
+        WORD('seed','s — ee — d',[SND('s','/s/'),SND('ee','/iː/',2),SND('d','/d/')],'🌱','🐶','🧢'),
+        WORD('sheep','sh — ee — p',[SND('sh','/ʃ/',2),SND('ee','/iː/',2),SND('p','/p/')],'🐑','🐟','🌙'),
+        WORD('deep','d — ee — p',[SND('d','/d/'),SND('ee','/iː/',2),SND('p','/p/')],'🤿','🌳','🐔')
       ],
-      // Level 5
       [
-        BASIC('flag','flag','sled','plum'),
-        BASIC('sled','sled','flag','truck'),
-        BASIC('plum','plum','sled','clam'),
-        BASIC('truck','truck','plum','block'),
-        BASIC('clam','clam','truck','block'),
-        BASIC('block','block','clam','flag')
-      ],
-      // Level 6
-      [
-        BASIC('crab','crab','dress','pram'),
-        BASIC('dress','dress','crab','brick'),
-        BASIC('pram','pram','dress','slug'),
-        BASIC('brick','brick','pram','clip'),
-        BASIC('slug','slug','brick','clip'),
-        BASIC('clip','clip','slug','crab')
-      ],
-      // Level 7 Boss
-      [
-        BASIC('flag','flag','frog','truck'),
-        BASIC('frog','frog','flag','clock'),
-        BASIC('truck','truck','frog','grass'),
-        BASIC('clock','clock','truck','crib'),
-        BASIC('grass','grass','clock','crib'),
-        BASIC('crib','crib','grass','flag')
+        WORD('boat','b — oa — t',[SND('b','/b/'),SND('oa','/əʊ/',2),SND('t','/t/')],'⛵','🥁','🦋'),
+        WORD('coat','c — oa — t',[SND('c','/k/'),SND('oa','/əʊ/',2),SND('t','/t/')],'🧥','🐐','🚗'),
+        WORD('goat','g — oa — t',[SND('g','/g/'),SND('oa','/əʊ/',2),SND('t','/t/')],'🐐','🌿','🐔'),
+        WORD('road','r — oa — d',[SND('r','/r/'),SND('oa','/əʊ/',2),SND('d','/d/')],'🛣️','🐟','🎩'),
+        WORD('moon','m — oo — n',[SND('m','/m/'),SND('oo','/uː/',2),SND('n','/n/')],'🌕','🐄','🌊'),
+        WORD('food','f — oo — d',[SND('f','/f/'),SND('oo','/uː/',2),SND('d','/d/')],'🍲','🐟','🌳'),
+        WORD('boot','b — oo — t',[SND('b','/b/'),SND('oo','/uː/',2),SND('t','/t/')],'👢','🐔','🌙'),
+        WORD('roof','r — oo — f',[SND('r','/r/'),SND('oo','/uː/',2),SND('f','/f/')],'🏠','🐶','🍞')
       ]
     ]
   },
 
-  // World 3: Mixed beginning and final blends
+  // ── Phase 4: adjacent consonants only, represented as separate phonemes ──
   phase4: {
     levels: [
-      // Level 1
       [
-        BASIC('frog','frog','hand','desk'),
-        BASIC('hand','hand','frog','plum'),
-        BASIC('desk','desk','hand','nest'),
-        BASIC('plum','plum','desk','crab'),
-        BASIC('nest','nest','plum','crab'),
-        BASIC('crab','crab','nest','frog')
+        WORD('frog','f — r — o — g',[SND('f','/f/'),SND('r','/r/'),SND('o','/ɒ/'),SND('g','/g/')],'🐸','🦊','🐟'),
+        WORD('clap','c — l — a — p',[SND('c','/k/'),SND('l','/l/'),SND('a','/a/'),SND('p','/p/')],'👏','🗺️','🧢'),
+        WORD('drum','d — r — u — m',[SND('d','/d/'),SND('r','/r/'),SND('u','/ʌ/'),SND('m','/m/')],'🥁','🦌','💧'),
+        WORD('flag','f — l — a — g',[SND('f','/f/'),SND('l','/l/'),SND('a','/a/'),SND('g','/g/')],'🚩','🐸','🦋'),
+        WORD('plug','p — l — u — g',[SND('p','/p/'),SND('l','/l/'),SND('u','/ʌ/'),SND('g','/g/')],'🔌','🐶','🌷'),
+        WORD('crab','c — r — a — b',[SND('c','/k/'),SND('r','/r/'),SND('a','/a/'),SND('b','/b/')],'🦀','🐝','🍎'),
+        WORD('clip','c — l — i — p',[SND('c','/k/'),SND('l','/l/'),SND('i','/ɪ/'),SND('p','/p/')],'📎','🐷','🌞'),
+        WORD('trip','t — r — i — p',[SND('t','/t/'),SND('r','/r/'),SND('i','/ɪ/'),SND('p','/p/')],'🧳','🐟','🌙')
       ],
-      // Level 2
       [
-        BASIC('flag','flag','milk','vest'),
-        BASIC('milk','milk','flag','plug'),
-        BASIC('vest','vest','milk','belt'),
-        BASIC('plug','plug','vest','drum'),
-        BASIC('belt','belt','plug','drum'),
-        BASIC('drum','drum','belt','flag')
+        WORD('tent','t — e — n — t',[SND('t','/t/'),SND('e','/ɛ/'),SND('n','/n/'),SND('t','/t/')],'⛺','🌷','🐢'),
+        WORD('hand','h — a — n — d',[SND('h','/h/'),SND('a','/a/'),SND('n','/n/'),SND('d','/d/')],'🖐️','🎩','🐝'),
+        WORD('belt','b — e — l — t',[SND('b','/b/'),SND('e','/ɛ/'),SND('l','/l/'),SND('t','/t/')],'👖','🐝','🏔️'),
+        WORD('milk','m — i — l — k',[SND('m','/m/'),SND('i','/ɪ/'),SND('l','/l/'),SND('k','/k/')],'🥛','🐄','🌿'),
+        WORD('sand','s — a — n — d',[SND('s','/s/'),SND('a','/a/'),SND('n','/n/'),SND('d','/d/')],'🏖️','🐟','🎩'),
+        WORD('lamp','l — a — m — p',[SND('l','/l/'),SND('a','/a/'),SND('m','/m/'),SND('p','/p/')],'💡','🐛','🌳'),
+        WORD('pond','p — o — n — d',[SND('p','/p/'),SND('o','/ɒ/'),SND('n','/n/'),SND('d','/d/')],'🦆','🐸','🎵'),
+        WORD('nest','n — e — s — t',[SND('n','/n/'),SND('e','/ɛ/'),SND('s','/s/'),SND('t','/t/')],'🪺','🐟','🧢')
       ],
-      // Level 3
       [
-        BASIC('plant','plant','stamp','skunk'),
-        BASIC('stamp','stamp','plant','stump'),
-        BASIC('skunk','skunk','stamp','trunk'),
-        BASIC('stump','stump','skunk','block'),
-        BASIC('trunk','trunk','stump','block'),
-        BASIC('block','block','trunk','plant')
+        WORD('stop','s — t — o — p',[SND('s','/s/'),SND('t','/t/'),SND('o','/ɒ/'),SND('p','/p/')],'🛑','🐷','🌙'),
+        WORD('step','s — t — e — p',[SND('s','/s/'),SND('t','/t/'),SND('e','/ɛ/'),SND('p','/p/')],'👣','🐟','🌳'),
+        WORD('spin','s — p — i — n',[SND('s','/s/'),SND('p','/p/'),SND('i','/ɪ/'),SND('n','/n/')],'🌀','🐔','🎩'),
+        WORD('skip','s — k — i — p',[SND('s','/s/'),SND('k','/k/'),SND('i','/ɪ/'),SND('p','/p/')],'⏭️','🐶','🍞'),
+        WORD('plan','p — l — a — n',[SND('p','/p/'),SND('l','/l/'),SND('a','/a/'),SND('n','/n/')],'🗺️','🐸','💧'),
+        WORD('plum','p — l — u — m',[SND('p','/p/'),SND('l','/l/'),SND('u','/ʌ/'),SND('m','/m/')],'🍑','🌙','🐔'),
+        WORD('snap','s — n — a — p',[SND('s','/s/'),SND('n','/n/'),SND('a','/a/'),SND('p','/p/')],'📸','🐟','🌳'),
+        WORD('black','b — l — a — ck',[SND('b','/b/'),SND('l','/l/'),SND('a','/a/'),SND('ck','/k/',2)],'⚫','🐶','🍎')
       ],
-      // Level 4
       [
-        BASIC('hand','hand','frog','stamp'),
-        BASIC('frog','frog','hand','belt'),
-        BASIC('stamp','stamp','frog','clam'),
-        BASIC('belt','belt','stamp','desk'),
-        BASIC('clam','clam','belt','desk'),
-        BASIC('desk','desk','clam','hand')
+        WORD('train','t — r — ai — n',[SND('t','/t/'),SND('r','/r/'),SND('ai','/eɪ/',2),SND('n','/n/')],'🚆','🐟','🌳'),
+        WORD('green','g — r — ee — n',[SND('g','/g/'),SND('r','/r/'),SND('ee','/iː/',2),SND('n','/n/')],'🟩','🐸','🎩'),
+        WORD('float','f — l — oa — t',[SND('f','/f/'),SND('l','/l/'),SND('oa','/əʊ/',2),SND('t','/t/')],'🛟','🐔','🍞'),
+        WORD('broom','b — r — oo — m',[SND('b','/b/'),SND('r','/r/'),SND('oo','/uː/',2),SND('m','/m/')],'🧹','🐟','🌙'),
+        WORD('sleep','s — l — ee — p',[SND('s','/s/'),SND('l','/l/'),SND('ee','/iː/',2),SND('p','/p/')],'😴','🐶','🌳'),
+        WORD('spoon','s — p — oo — n',[SND('s','/s/'),SND('p','/p/'),SND('oo','/uː/',2),SND('n','/n/')],'🥄','🐔','🎩'),
+        WORD('snail','s — n — ai — l',[SND('s','/s/'),SND('n','/n/'),SND('ai','/eɪ/',2),SND('l','/l/')],'🐌','🐟','🍎'),
+        WORD('brush','b — r — u — sh',[SND('b','/b/'),SND('r','/r/'),SND('u','/ʌ/'),SND('sh','/ʃ/',2)],'🪥','🐶','🌿')
       ],
-      // Level 5
       [
-        BASIC('plant','plant','milk','flag'),
-        BASIC('milk','milk','plant','pump'),
-        BASIC('flag','flag','milk','crab'),
-        BASIC('pump','pump','flag','vest'),
-        BASIC('crab','crab','pump','vest'),
-        BASIC('vest','vest','crab','plant')
-      ],
-      // Level 6
-      [
-        BASIC('skunk','skunk','drum','lamp'),
-        BASIC('drum','drum','skunk','block'),
-        BASIC('lamp','lamp','drum','stump'),
-        BASIC('block','block','lamp','tank'),
-        BASIC('stump','stump','block','tank'),
-        BASIC('tank','tank','stump','skunk')
-      ],
-      // Level 7 Boss
-      [
-        BASIC('stamp','stamp','frog','desk'),
-        BASIC('frog','frog','stamp','plant'),
-        BASIC('desk','desk','frog','truck'),
-        BASIC('plant','plant','desk','mask'),
-        BASIC('truck','truck','plant','mask'),
-        BASIC('mask','mask','truck','stamp')
+        WORD('toast','t — oa — s — t',[SND('t','/t/'),SND('oa','/əʊ/',2),SND('s','/s/'),SND('t','/t/')],'🍞','🐸','🌙'),
+        WORD('paint','p — ai — n — t',[SND('p','/p/'),SND('ai','/eɪ/',2),SND('n','/n/'),SND('t','/t/')],'🎨','🐟','🌳'),
+        WORD('chimp','ch — i — m — p',[SND('ch','/tʃ/',2),SND('i','/ɪ/'),SND('m','/m/'),SND('p','/p/')],'🐒','🐶','🎩'),
+        WORD('shelf','sh — e — l — f',[SND('sh','/ʃ/',2),SND('e','/ɛ/'),SND('l','/l/'),SND('f','/f/')],'📚','🐔','🍎'),
+        WORD('bloom','b — l — oo — m',[SND('b','/b/'),SND('l','/l/'),SND('oo','/uː/',2),SND('m','/m/')],'🌼','🐟','🌙'),
+        WORD('crash','c — r — a — sh',[SND('c','/k/'),SND('r','/r/'),SND('a','/a/'),SND('sh','/ʃ/',2)],'💥','🐶','🌳'),
+        WORD('clock','c — l — o — ck',[SND('c','/k/'),SND('l','/l/'),SND('o','/ɒ/'),SND('ck','/k/',2)],'🕒','🐔','🍞'),
+        WORD('drink','d — r — i — n — k',[SND('d','/d/'),SND('r','/r/'),SND('i','/ɪ/'),SND('n','/n/'),SND('k','/k/')],'🥤','🐟','🌿')
       ]
     ]
   },
 
-  // World 4: Early digraph bridge and review
+  // ── Phase 5: early alternative spellings only (ay, ea, ow) ──
   phase5: {
     levels: [
-      // Level 1 — sh
       [
-        {w:'ship',d:'sh - i - p',s:[SND('sh','/sh/',2),SND('i','/i/'),SND('p','/p/')],c:[{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:1},{img:wordAssetPath('shop'),fb:'shop',label:'shop',ok:0},{img:wordAssetPath('fish'),fb:'fish',label:'fish',ok:0}]},
-        {w:'shop',d:'sh - o - p',s:[SND('sh','/sh/',2),SND('o','/o/'),SND('p','/p/')],c:[{img:wordAssetPath('shop'),fb:'shop',label:'shop',ok:1},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0},{img:wordAssetPath('dish'),fb:'dish',label:'dish',ok:0}]},
-        {w:'fish',d:'f - i - sh',s:[SND('f','/f/'),SND('i','/i/'),SND('sh','/sh/',2)],c:[{img:wordAssetPath('fish'),fb:'fish',label:'fish',ok:1},{img:wordAssetPath('dish'),fb:'dish',label:'dish',ok:0},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0}]},
-        {w:'dish',d:'d - i - sh',s:[SND('d','/d/'),SND('i','/i/'),SND('sh','/sh/',2)],c:[{img:wordAssetPath('dish'),fb:'dish',label:'dish',ok:1},{img:wordAssetPath('fish'),fb:'fish',label:'fish',ok:0},{img:wordAssetPath('shell'),fb:'shell',label:'shell',ok:0}]},
-        {w:'shell',d:'sh - e - ll',s:[SND('sh','/sh/',2),SND('e','/e/'),SND('ll','/l/',2)],c:[{img:wordAssetPath('shell'),fb:'shell',label:'shell',ok:1},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0},{img:wordAssetPath('brush'),fb:'brush',label:'brush',ok:0}]},
-        {w:'brush',d:'b - r - u - sh',s:[SND('b','/b/'),SND('r','/r/'),SND('u','/u/'),SND('sh','/sh/',2)],c:[{img:wordAssetPath('brush'),fb:'brush',label:'brush',ok:1},{img:wordAssetPath('dish'),fb:'dish',label:'dish',ok:0},{img:wordAssetPath('shell'),fb:'shell',label:'shell',ok:0}]}
+        WORD('day','d — ay',[SND('d','/d/'),SND('ay','/eɪ/',2)],'🌞','🌙','🧤'),
+        WORD('play','p — l — ay',[SND('p','/p/'),SND('l','/l/'),SND('ay','/eɪ/',2)],'🎮','🌿','🍞'),
+        WORD('say','s — ay',[SND('s','/s/'),SND('ay','/eɪ/',2)],'🗣️','🐟','🌳'),
+        WORD('may','m — ay',[SND('m','/m/'),SND('ay','/eɪ/',2)],'📅','🐶','🌙'),
+        WORD('bay','b — ay',[SND('b','/b/'),SND('ay','/eɪ/',2)],'🏖️','🐔','🍎'),
+        WORD('hay','h — ay',[SND('h','/h/'),SND('ay','/eɪ/',2)],'🌾','🐟','🎩'),
+        WORD('tray','t — r — ay',[SND('t','/t/'),SND('r','/r/'),SND('ay','/eɪ/',2)],'🍽️','🐶','🌳'),
+        WORD('clay','c — l — ay',[SND('c','/k/'),SND('l','/l/'),SND('ay','/eɪ/',2)],'🏺','🐔','🍞')
       ],
-      // Level 2 — ch
       [
-        {w:'chin',d:'ch - i - n',s:[SND('ch','/ch/',2),SND('i','/i/'),SND('n','/n/')],c:[{img:wordAssetPath('chin'),fb:'chin',label:'chin',ok:1},{img:wordAssetPath('chick'),fb:'chick',label:'chick',ok:0},{img:wordAssetPath('chip'),fb:'chip',label:'chip',ok:0}]},
-        {w:'chick',d:'ch - i - ck',s:[SND('ch','/ch/',2),SND('i','/i/'),SND('ck','/k/',2)],c:[{img:wordAssetPath('chick'),fb:'chick',label:'chick',ok:1},{img:wordAssetPath('chin'),fb:'chin',label:'chin',ok:0},{img:wordAssetPath('chip'),fb:'chip',label:'chip',ok:0}]},
-        {w:'chip',d:'ch - i - p',s:[SND('ch','/ch/',2),SND('i','/i/'),SND('p','/p/')],c:[{img:wordAssetPath('chip'),fb:'chip',label:'chip',ok:1},{img:wordAssetPath('chin'),fb:'chin',label:'chin',ok:0},{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:0}]},
-        {w:'bench',d:'b - e - n - ch',s:[SND('b','/b/'),SND('e','/e/'),SND('n','/n/'),SND('ch','/ch/',2)],c:[{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:1},{img:wordAssetPath('chest'),fb:'chest',label:'chest',ok:0},{img:wordAssetPath('chimp'),fb:'chimp',label:'chimp',ok:0}]},
-        {w:'chest',d:'ch - e - s - t',s:[SND('ch','/ch/',2),SND('e','/e/'),SND('s','/s/'),SND('t','/t/')],c:[{img:wordAssetPath('chest'),fb:'chest',label:'chest',ok:1},{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:0},{img:wordAssetPath('chimp'),fb:'chimp',label:'chimp',ok:0}]},
-        {w:'chimp',d:'ch - i - m - p',s:[SND('ch','/ch/',2),SND('i','/i/'),SND('m','/m/'),SND('p','/p/')],c:[{img:wordAssetPath('chimp'),fb:'chimp',label:'chimp',ok:1},{img:wordAssetPath('chip'),fb:'chip',label:'chip',ok:0},{img:wordAssetPath('chest'),fb:'chest',label:'chest',ok:0}]}
+        WORD('sea','s — ea',[SND('s','/s/'),SND('ea','/iː/',2)],'🌊','🌳','🐝'),
+        WORD('tea','t — ea',[SND('t','/t/'),SND('ea','/iː/',2)],'🍵','🐟','🌞'),
+        WORD('leaf','l — ea — f',[SND('l','/l/'),SND('ea','/iː/',2),SND('f','/f/')],'🍃','🐶','🧢'),
+        WORD('bead','b — ea — d',[SND('b','/b/'),SND('ea','/iː/',2),SND('d','/d/')],'📿','🐔','🌙'),
+        WORD('meat','m — ea — t',[SND('m','/m/'),SND('ea','/iː/',2),SND('t','/t/')],'🍖','🐟','🌳'),
+        WORD('seal','s — ea — l',[SND('s','/s/'),SND('ea','/iː/',2),SND('l','/l/')],'🦭','🐶','🍞'),
+        WORD('pea','p — ea',[SND('p','/p/'),SND('ea','/iː/',2)],'🫛','🐔','🌞'),
+        WORD('beach','b — ea — ch',[SND('b','/b/'),SND('ea','/iː/',2),SND('ch','/tʃ/',2)],'🏖️','🐟','🧢')
       ],
-      // Level 3 — th / ng
       [
-        {w:'bath',d:'b - a - th',s:[SND('b','/b/'),SND('a','/a/'),SND('th','/th/',2)],c:[{img:wordAssetPath('bath'),fb:'bath',label:'bath',ok:1},{img:wordAssetPath('moth'),fb:'moth',label:'moth',ok:0},{img:wordAssetPath('tooth'),fb:'tooth',label:'tooth',ok:0}]},
-        {w:'moth',d:'m - o - th',s:[SND('m','/m/'),SND('o','/o/'),SND('th','/th/',2)],c:[{img:wordAssetPath('moth'),fb:'moth',label:'moth',ok:1},{img:wordAssetPath('bath'),fb:'bath',label:'bath',ok:0},{img:wordAssetPath('tooth'),fb:'tooth',label:'tooth',ok:0}]},
-        {w:'tooth',d:'t - oo - th',s:[SND('t','/t/'),SND('oo','/oo/',2),SND('th','/th/',2)],c:[{img:wordAssetPath('tooth'),fb:'tooth',label:'tooth',ok:1},{img:wordAssetPath('bath'),fb:'bath',label:'bath',ok:0},{img:wordAssetPath('moth'),fb:'moth',label:'moth',ok:0}]},
-        {w:'ring',d:'r - i - ng',s:[SND('r','/r/'),SND('i','/i/'),SND('ng','/ng/',2)],c:[{img:wordAssetPath('ring'),fb:'ring',label:'ring',ok:1},{img:wordAssetPath('king'),fb:'king',label:'king',ok:0},{img:wordAssetPath('wing'),fb:'wing',label:'wing',ok:0}]},
-        {w:'king',d:'k - i - ng',s:[SND('k','/k/'),SND('i','/i/'),SND('ng','/ng/',2)],c:[{img:wordAssetPath('king'),fb:'king',label:'king',ok:1},{img:wordAssetPath('ring'),fb:'ring',label:'ring',ok:0},{img:wordAssetPath('wing'),fb:'wing',label:'wing',ok:0}]},
-        {w:'wing',d:'w - i - ng',s:[SND('w','/w/'),SND('i','/i/'),SND('ng','/ng/',2)],c:[{img:wordAssetPath('wing'),fb:'wing',label:'wing',ok:1},{img:wordAssetPath('ring'),fb:'ring',label:'ring',ok:0},{img:wordAssetPath('king'),fb:'king',label:'king',ok:0}]}
+        WORD('snow','s — n — ow',[SND('s','/s/'),SND('n','/n/'),SND('ow','/əʊ/',2)],'❄️','🌧️','🔥'),
+        WORD('blow','b — l — ow',[SND('b','/b/'),SND('l','/l/'),SND('ow','/əʊ/',2)],'🌬️','🐶','🌳'),
+        WORD('grow','g — r — ow',[SND('g','/g/'),SND('r','/r/'),SND('ow','/əʊ/',2)],'🌱','🐔','🌙'),
+        WORD('glow','g — l — ow',[SND('g','/g/'),SND('l','/l/'),SND('ow','/əʊ/',2)],'💡','🐟','🍞'),
+        WORD('crow','c — r — ow',[SND('c','/k/'),SND('r','/r/'),SND('ow','/əʊ/',2)],'🐦','🐶','🌿'),
+        WORD('slow','s — l — ow',[SND('s','/s/'),SND('l','/l/'),SND('ow','/əʊ/',2)],'🐢','🐔','🌞'),
+        WORD('show','sh — ow',[SND('sh','/ʃ/',2),SND('ow','/əʊ/',2)],'🎭','🐟','🌳'),
+        WORD('row','r — ow',[SND('r','/r/'),SND('ow','/əʊ/',2)],'🚣','🐶','🧢')
       ],
-      // Level 4 — digraph + blend light mix
       [
-        {w:'fish',d:'f - i - sh',s:[SND('f','/f/'),SND('i','/i/'),SND('sh','/sh/',2)],c:[{img:wordAssetPath('fish'),fb:'fish',label:'fish',ok:1},{img:wordAssetPath('flag'),fb:'flag',label:'flag',ok:0},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0}]},
-        BASIC('flag','flag','drum','bench'),
-        {w:'ship',d:'sh - i - p',s:[SND('sh','/sh/',2),SND('i','/i/'),SND('p','/p/')],c:[{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:1},{img:wordAssetPath('fish'),fb:'fish',label:'fish',ok:0},{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:0}]},
-        BASIC('drum','drum','flag','mask'),
-        {w:'bench',d:'b - e - n - ch',s:[SND('b','/b/'),SND('e','/e/'),SND('n','/n/'),SND('ch','/ch/',2)],c:[{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:1},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0},{img:wordAssetPath('mask'),fb:'mask',label:'mask',ok:0}]},
-        BASIC('mask','mask','drum','flag')
+        WORD('dream','d — r — ea — m',[SND('d','/d/'),SND('r','/r/'),SND('ea','/iː/',2),SND('m','/m/')],'💭','🐟','🌳'),
+        WORD('cream','c — r — ea — m',[SND('c','/k/'),SND('r','/r/'),SND('ea','/iː/',2),SND('m','/m/')],'🍦','🐶','🌙'),
+        WORD('clean','c — l — ea — n',[SND('c','/k/'),SND('l','/l/'),SND('ea','/iː/',2),SND('n','/n/')],'🧼','🐔','🍞'),
+        WORD('speak','s — p — ea — k',[SND('s','/s/'),SND('p','/p/'),SND('ea','/iː/',2),SND('k','/k/')],'🗣️','🐟','🌳'),
+        WORD('tray','t — r — ay',[SND('t','/t/'),SND('r','/r/'),SND('ay','/eɪ/',2)],'🍽️','🐶','🌞'),
+        WORD('clay','c — l — ay',[SND('c','/k/'),SND('l','/l/'),SND('ay','/eɪ/',2)],'🏺','🐔','🌙'),
+        WORD('blow','b — l — ow',[SND('b','/b/'),SND('l','/l/'),SND('ow','/əʊ/',2)],'🌬️','🐟','🍞'),
+        WORD('grow','g — r — ow',[SND('g','/g/'),SND('r','/r/'),SND('ow','/əʊ/',2)],'🌱','🐶','🌿')
       ],
-      // Level 5 — digraph + earlier review
       [
-        {w:'shell',d:'sh - e - ll',s:[SND('sh','/sh/',2),SND('e','/e/'),SND('ll','/l/',2)],c:[{img:wordAssetPath('shell'),fb:'shell',label:'shell',ok:1},{img:wordAssetPath('hand'),fb:'hand',label:'hand',ok:0},{img:wordAssetPath('chick'),fb:'chick',label:'chick',ok:0}]},
-        BASIC('hand','hand','vest','pond'),
-        {w:'chick',d:'ch - i - ck',s:[SND('ch','/ch/',2),SND('i','/i/'),SND('ck','/k/',2)],c:[{img:wordAssetPath('chick'),fb:'chick',label:'chick',ok:1},{img:wordAssetPath('shell'),fb:'shell',label:'shell',ok:0},{img:wordAssetPath('ring'),fb:'ring',label:'ring',ok:0}]},
-        BASIC('vest','vest','hand','ring'),
-        {w:'ring',d:'r - i - ng',s:[SND('r','/r/'),SND('i','/i/'),SND('ng','/ng/',2)],c:[{img:wordAssetPath('ring'),fb:'ring',label:'ring',ok:1},{img:wordAssetPath('chick'),fb:'chick',label:'chick',ok:0},{img:wordAssetPath('pond'),fb:'pond',label:'pond',ok:0}]},
-        BASIC('pond','pond','hand','vest')
-      ],
-      // Level 6 — mixed challenge
-      [
-        {w:'chimp',d:'ch - i - m - p',s:[SND('ch','/ch/',2),SND('i','/i/'),SND('m','/m/'),SND('p','/p/')],c:[{img:wordAssetPath('chimp'),fb:'chimp',label:'chimp',ok:1},{img:wordAssetPath('frog'),fb:'frog',label:'frog',ok:0},{img:wordAssetPath('bath'),fb:'bath',label:'bath',ok:0}]},
-        BASIC('frog','frog','stamp','brush'),
-        {w:'bath',d:'b - a - th',s:[SND('b','/b/'),SND('a','/a/'),SND('th','/th/',2)],c:[{img:wordAssetPath('bath'),fb:'bath',label:'bath',ok:1},{img:wordAssetPath('chimp'),fb:'chimp',label:'chimp',ok:0},{img:wordAssetPath('brush'),fb:'brush',label:'brush',ok:0}]},
-        BASIC('stamp','stamp','frog','milk'),
-        {w:'brush',d:'b - r - u - sh',s:[SND('b','/b/'),SND('r','/r/'),SND('u','/u/'),SND('sh','/sh/',2)],c:[{img:wordAssetPath('brush'),fb:'brush',label:'brush',ok:1},{img:wordAssetPath('bath'),fb:'bath',label:'bath',ok:0},{img:wordAssetPath('milk'),fb:'milk',label:'milk',ok:0}]},
-        BASIC('milk','milk','stamp','frog')
-      ],
-      // Level 7 Final Boss
-      [
-        {w:'ship',d:'sh - i - p',s:[SND('sh','/sh/',2),SND('i','/i/'),SND('p','/p/')],c:[{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:1},{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:0},{img:wordAssetPath('moth'),fb:'moth',label:'moth',ok:0}]},
-        {w:'bench',d:'b - e - n - ch',s:[SND('b','/b/'),SND('e','/e/'),SND('n','/n/'),SND('ch','/ch/',2)],c:[{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:1},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0},{img:wordAssetPath('skunk'),fb:'skunk',label:'skunk',ok:0}]},
-        {w:'moth',d:'m - o - th',s:[SND('m','/m/'),SND('o','/o/'),SND('th','/th/',2)],c:[{img:wordAssetPath('moth'),fb:'moth',label:'moth',ok:1},{img:wordAssetPath('bench'),fb:'bench',label:'bench',ok:0},{img:wordAssetPath('dish'),fb:'dish',label:'dish',ok:0}]},
-        BASIC('skunk','skunk','crab','dish'),
-        BASIC('crab','crab','skunk','dish'),
-        {w:'dish',d:'d - i - sh',s:[SND('d','/d/'),SND('i','/i/'),SND('sh','/sh/',2)],c:[{img:wordAssetPath('dish'),fb:'dish',label:'dish',ok:1},{img:wordAssetPath('ship'),fb:'ship',label:'ship',ok:0},{img:wordAssetPath('crab'),fb:'crab',label:'crab',ok:0}]}
+        WORD('play','p — l — ay',[SND('p','/p/'),SND('l','/l/'),SND('ay','/eɪ/',2)],'🎮','🌿','🍞'),
+        WORD('beach','b — ea — ch',[SND('b','/b/'),SND('ea','/iː/',2),SND('ch','/tʃ/',2)],'🏖️','🐟','🧢'),
+        WORD('crow','c — r — ow',[SND('c','/k/'),SND('r','/r/'),SND('ow','/əʊ/',2)],'🐦','🐶','🌿'),
+        WORD('clean','c — l — ea — n',[SND('c','/k/'),SND('l','/l/'),SND('ea','/iː/',2),SND('n','/n/')],'🧼','🐔','🌙'),
+        WORD('tea','t — ea',[SND('t','/t/'),SND('ea','/iː/',2)],'🍵','🐟','🌞'),
+        WORD('clay','c — l — ay',[SND('c','/k/'),SND('l','/l/'),SND('ay','/eɪ/',2)],'🏺','🐶','🌳'),
+        WORD('glow','g — l — ow',[SND('g','/g/'),SND('l','/l/'),SND('ow','/əʊ/',2)],'💡','🐔','🍞'),
+        WORD('leaf','l — ea — f',[SND('l','/l/'),SND('ea','/iː/',2),SND('f','/f/')],'🍃','🐟','🧢')
       ]
     ]
   }
 };
 
+// ╔══════════════════════════════════════════════════════════╗
+// ║                    WORLD DEFINITIONS                     ║
+// ╚══════════════════════════════════════════════════════════╝
 var WORLDS = [
-  { id:0, name:'Spring Garden', em:'🌸', phase:'a + i', phaseKey:'phase2',
+  { id:0, name:'Spring Garden', em:'🌸', phase:'Phase 2', phaseKey:'phase2',
     desc:'Short vowels · CVC words',
     mapBg:'linear-gradient(180deg,#c8f0d0,#80d898 40%,#50b870)',
     mapBarBg:'rgba(220,255,230,.95)', mapTitleColor:'#1a4d2e',
@@ -802,7 +753,7 @@ var WORLDS = [
       desc:'Leah waved her magic wand and the Spring Garden bloomed! She has learned every short sound. The Summer Coast calls! 🌿🪄' },
     nextBg:'linear-gradient(180deg,#1a1000,#402800 50%,#1a0800)' },
 
-  { id:1, name:'Summer Coast', em:'☀️', phase:'o + u', phaseKey:'phase3',
+  { id:1, name:'Summer Coast', em:'☀️', phase:'Phase 3', phaseKey:'phase3',
     desc:'Digraphs · vowel teams',
     mapBg:'linear-gradient(180deg,#fff8b0,#ffd040 40%,#f0a000)',
     mapBarBg:'rgba(255,248,200,.95)', mapTitleColor:'#5a3800',
@@ -816,7 +767,7 @@ var WORLDS = [
       desc:'Leah braved the summer seas and mastered every digraph spell! She has earned a shimmering golden cape! 🌊⚔️' },
     nextBg:'linear-gradient(180deg,#0a0800,#201000 50%,#0a0500)' },
 
-  { id:2, name:'Autumn Forest', em:'🍂', phase:'e + review', phaseKey:'phase4',
+  { id:2, name:'Autumn Forest', em:'🍂', phase:'Phase 4', phaseKey:'phase4',
     desc:'Adjacent consonants · blends',
     mapBg:'linear-gradient(180deg,#ffe0a0,#f09840 40%,#c06010)',
     mapBarBg:'rgba(255,235,200,.95)', mapTitleColor:'#4a1800',
@@ -830,7 +781,7 @@ var WORLDS = [
       desc:'Leah mastered every tricky blend in the forest! The ancient trees gave her a golden sceptre. One world remains! 🍂🔱' },
     nextBg:'linear-gradient(180deg,#000a1a,#001030 50%,#000818)' },
 
-  { id:3, name:'Winter Palace', em:'❄️', phase:'Full review', phaseKey:'phase5',
+  { id:3, name:'Winter Palace', em:'❄️', phase:'Phase 5', phaseKey:'phase5',
     desc:'Alternative spellings · rescue!',
     mapBg:'linear-gradient(180deg,#d8f0ff,#90c8f0 40%,#5090d0)',
     mapBarBg:'rgba(210,240,255,.95)', mapTitleColor:'#0a2a50',
@@ -946,40 +897,23 @@ function activeLevelForWorld(worldId) {
 
 var CURRICULUM_LEVEL_POOLS = {
   phase2: [
-    ['hand','tent','lamp','milk','belt','nest'],
-    ['sand','pond','mask','desk','vest','sink'],
-    ['gift','tank','pump','jump','ant','tent'],
-    ['hand','nest','desk','pond','sink','mask'],
-    ['belt','milk','gift','vest','pump','tank'],
-    ['tent','sand','lamp','jump','hand','sink'],
-    ['hand','desk','milk','pond','gift','sink']
+    ['sat','pin','tap','pan','sit','sip','mat','nap','hat'],
+    ['dog','dig','pot','top','bag','cab','log','cot','cap'],
+    ['sun','bus','cup','mud','rug','run','hen','pen','net']
   ],
   phase3: [
-    ['flag','frog','drum','crab','plum','clip'],
-    ['sled','slug','clam','plug','crib','pram'],
-    ['brick','clock','truck','grass','dress','block'],
-    ['frog','crib','grass','plug','drum','clock'],
-    ['flag','sled','plum','truck','clam','block'],
-    ['crab','dress','pram','brick','slug','clip'],
-    ['flag','frog','truck','clock','grass','crib']
+    ['ship','shop','fish','dish','shed','shell','bush','cash'],
+    ['chin','chat','chip','chop','chick','check','ring','sing','song'],
+    ['king','wing','rain','tail','sail','feet','seed','boat','moon']
   ],
   phase4: [
-    ['frog','hand','desk','plum','nest','crab'],
-    ['flag','milk','vest','plug','belt','drum'],
-    ['plant','stamp','skunk','stump','trunk','block'],
-    ['hand','frog','stamp','belt','clam','desk'],
-    ['plant','milk','flag','pump','crab','vest'],
-    ['skunk','drum','lamp','block','stump','tank'],
-    ['stamp','frog','desk','plant','truck','mask']
+    ['frog','clap','drum','flag','plug','crab','clip','trip','stop'],
+    ['tent','hand','belt','milk','sand','lamp','pond','nest','step'],
+    ['spin','skip','plan','plum','snap','black','train','green','float']
   ],
   phase5: [
-    ['ship','shop','fish','dish','shell','brush'],
-    ['chin','chick','chip','bench','chest','chimp'],
-    ['bath','moth','tooth','ring','king','wing'],
-    ['fish','flag','ship','drum','bench','mask'],
-    ['shell','hand','chick','vest','ring','pond'],
-    ['chimp','frog','bath','stamp','brush','milk'],
-    ['ship','bench','moth','skunk','crab','dish']
+    ['day','play','bay','hay','tray','clay','sea','tea','leaf'],
+    ['snow','blow','crow','row','seal','pea','beach','meat','bead']
   ]
 };
 
