@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "leah-quest-phonics",
+  "name": "emma-quest-phonics",
   "builds": [
     { "src": "**/*", "use": "@vercel/static" }
   ],

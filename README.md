@@ -1,6 +1,6 @@
-# Leah's Quest — Phonics Learning Game
+# Emma's Quest — Phonics Learning Game
 
-A UK Reception / Year 1 phonics game for Leah, covering Phases 2–5.
+A UK Reception / Year 1 phonics game for Emma, covering Phases 2–5.
 
 ---
 
@@ -16,7 +16,7 @@ npm i -g vercel
 vercel
 
 # Follow the prompts — choose "static site", accept defaults.
-# Vercel will print your live URL, e.g. https://leah-quest-phonics.vercel.app
+# Vercel will print your live URL, e.g. https://emma-quest-phonics.vercel.app
 ```
 
 ### Option B — GitHub + Vercel dashboard
@@ -36,7 +36,7 @@ phonics_game_v2/
 ├── vercel.json         ← Vercel static-site config
 ├── README.md           ← This file
 └── assets/
-    ├── seasonal/       ← Leah's seasonal photos (spring/summer/autumn/winter.png)
+    ├── seasonal/       ← Emma's seasonal photos (spring/summer/autumn/winter.png)
     ├── word_cards/     ← Word card images  (<word>.png)
     ├── choice_cards/   ← Answer choice images (<unicode-codepoints>.svg)
     └── js/             ← Modular JS (reference copies — not loaded by index.html)
